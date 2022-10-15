@@ -4,3 +4,5 @@ class Punto:
         y = self.y
     
     def __str__(self):
+        formato = "({0},{1})".format(self.x,self.y)
+        return formato

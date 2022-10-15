@@ -20,11 +20,11 @@ class Punto:
         elif self.x < 0 and self.y > 0:
             cuadrante = "Cuarto cuadrante"
         elif self.x == 0 and self.y != 0:
-            cuadrante = "Sobre el eje y"
+            cuadrante = "eje y"
         elif self.x != 0 and self.y == 0:
-            cuadrante = "Sobre el eje x"
+            cuadrante = "eje x"
         elif self.x == 0 and self.y == 0:
-            cuadrante = "Sobre el origen"
+            cuadrante = "origen"
         return cuadrante
     def vector(self,x2=0,y2=0):
         self.x2= x2
@@ -57,15 +57,6 @@ class Rectangulo:
         area = abs((self.xpf - self.xpi) * (self.ypf - self.ypi))
         print("El area del rectángulo mide "+str(area)+" unidades cuadradas")
 
-miprimpunto = Punto(1,2)
-print(miprimpunto.cuadrante())
-print(miprimpunto.vector(4,7))
-miprimpunto.distancia(2,5)
-
-recti = Rectangulo(1,4,8,-3)
-recti.base()
-recti.altura()
-recti.area()
 #Pruebas
 #Crea los puntos A(2, 3), B(5,5), C(-3, -1) y D(0,0) e imprimelos por pantalla
 A = Punto(2,3)
@@ -101,13 +92,22 @@ print("\n")
 a = A.distancia(D.x, D.y)
 b = B.distancia(D.x, D.y)
 c = C.distancia(D.x, D.y)
-print (a)
-
+if a>b and a>c:
+    print("La coordenada más lejos del origen es A")
+elif b>c and b>a:
+    print("La coordenada más lejos del origen es B")
+elif c>b and c>a:
+    print("La coordenada más lejos del origen es C")
 print
 #Crea un rectángulo utilizando los puntos A y B
+
 r = Rectangulo(A.x,A.y,B.x,B.y)
 #Consulta la base, altura y área del rectángulo.
+print("\n")
 r.base()
+r.altura()
+r.area()
+print("\n")
 
 
 

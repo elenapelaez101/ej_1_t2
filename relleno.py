@@ -23,4 +23,9 @@ class Punto:
         elif self.x == 0 and self.y == 0:
             cuadrante = "Sobre el origen"
         return cuadrante
-    
+    def vector(self,x2=0,y2=0):
+        self.x2= x2
+        self.y2 =y2
+        vector = "("+self.x2 - self.x+","+self.y2-self.y+")"
+        return vector
+

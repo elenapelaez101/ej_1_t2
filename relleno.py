@@ -1,7 +1,8 @@
 class Punto:
     def __init__(self,x=0,y=0):
-        x = self.x
-        y = self.y
+        self.x = x
+        self.y = y
+        print("Se ha generado tu punto")
     
     def __str__(self):
         formato = "({0},{1})".format(self.x,self.y)
@@ -28,4 +29,9 @@ class Punto:
         self.y2 =y2
         vector = "("+self.x2 - self.x+","+self.y2-self.y+")"
         return vector
+
+miprimpunto = Punto(1,2)
+print(miprimpunto.cuadrante())
+
+
 

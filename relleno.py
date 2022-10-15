@@ -35,8 +35,8 @@ class Punto:
         self.x3 = x3
         self.y3= y3
         vecti = self.x3-self.x, self.y3- self.y
-        distancia= math.sqrt(vecti[0]**2+vecti[1]^2)
-        print("la distancia entre los puntos es"+str(distancia))
+        distancia= round(math.sqrt(vecti[0]**2+vecti[1]^2),2)
+        return distancia
 
 
 class Rectangulo:
@@ -66,6 +66,50 @@ recti = Rectangulo(1,4,8,-3)
 recti.base()
 recti.altura()
 recti.area()
+#Pruebas
+#Crea los puntos A(2, 3), B(5,5), C(-3, -1) y D(0,0) e imprimelos por pantalla
+A = Punto(2,3)
+B = Punto(5,5)
+C = Punto(-3,-1)
+D = Punto(0,0)
+
+print(A)
+print(B)
+print(C)
+print(D)
+
+#Consulta a que cuadrante pertenecen el punto A, C y D.
+print("\nA se encuentra en el "+A.cuadrante())
+print("B se encuentra en el "+C.cuadrante())
+print("D se encuentra en el "+D.cuadrante())
+
+#Consulta los vectores AB y BA.
+print("\nel vector AB es:")
+print(A.vector(B.x,B.y))
+
+print("el vector BA es:")
+print(B.vector(A.x,A.y))
+
+#(Optativo) Consulta la distancia entre los puntos 'A y B' y 'B y A'.
+print("\nDistancia entre los puntos A y B: "+str(A.distancia(B.x, B.y))+ " unidades")
+
+print("\nDistancia entre los puntos B y A: "+str(B.distancia(A.x, A.y))+ " unidades")
+
+
+#(Optativo) Determina cual de los 3 puntos A, B o C, se encuentra más lejos del origen, punto (0,0).
+print("\n")
+a = A.distancia(D.x, D.y)
+b = B.distancia(D.x, D.y)
+c = C.distancia(D.x, D.y)
+print (a)
+
+print
+#Crea un rectángulo utilizando los puntos A y B
+r = Rectangulo(A.x,A.y,B.x,B.y)
+#Consulta la base, altura y área del rectángulo.
+r.base()
+
+
 
 
 
